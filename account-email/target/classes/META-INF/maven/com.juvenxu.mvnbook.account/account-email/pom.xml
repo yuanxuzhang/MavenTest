@@ -1,0 +1,66 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>com.juvenxu.mvnbook.account</groupId>
+    <artifactId>account-parent</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <relativePath>../account-parent/pom.xml</relativePath>
+  </parent>
+  <artifactId>account-email</artifactId>
+  <!-- <packaging>jar</packaging> -->
+  <name>account-email</name>
+  <url>http://maven.apache.org</url>
+
+  <properties>
+    <javax.mail.version>1.4.1</javax.mail.version>
+    <greenmail.version>1.3.1b</greenmail.version>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+
+  <dependencies>
+    <!-- <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-core</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-beans</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-context</artifactId>
+      <exclusions>
+      	<exclusion>
+      		<artifactId>spring-beans</artifactId>
+      		<groupId>org.springframework</groupId>
+      	</exclusion>
+      </exclusions>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-context-support</artifactId>
+      <exclusions>
+      	<exclusion>
+      		<artifactId>spring-beans</artifactId>
+      		<groupId>org.springframework</groupId>
+      	</exclusion>
+      </exclusions>
+    </dependency> -->
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+    </dependency>
+     <dependency>
+      <groupId>javax.mail</groupId>
+      <artifactId>mail</artifactId>
+      <version>${javax.mail.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>com.icegreen</groupId>
+      <artifactId>greenmail</artifactId>
+      <version>${greenmail.version}</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+</project>
