@@ -12,7 +12,6 @@
   <packaging>war</packaging>
   <name>account-web</name>
   <url>http://maven.apache.org</url>
-<!-- <filename>account</filename> -->
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
@@ -40,4 +39,8 @@
       <artifactId>spring-web</artifactId>
     </dependency>
   </dependencies>
+  <build>
+    <finalName>account-webs</finalName>
+  </build>
 </project>
+
