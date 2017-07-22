@@ -2,10 +2,17 @@
 <beans xmlns = "http://www.springframework.org/schema/beans"
 	xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation = "http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
-	<bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer" >
+	<!-- <bean id="accountPersistPropertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer" >
 		<property name="location" value="classpath:account-service.properties" />
-	</bean>
+	</bean> -->
+	<bean id="accountPersistPropertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">  
+	    <property name="order" value="1" />  
+	    <property name="ignoreUnresolvablePlaceholders" value="true" />  
+	    <property name="location">  
+	       <value>classpath:account-persist.properties</value>  
+	    </property>  
+	</bean> 
 	<bean id="accountPersistService" class="com.juvenxu.mvnbook.account.persist.AccountPersistServiceImpl">
-		<property name="file" value="${persist.file}" />
+		<property name="file" value= "${persist.file}" />
     </bean>
 </beans>

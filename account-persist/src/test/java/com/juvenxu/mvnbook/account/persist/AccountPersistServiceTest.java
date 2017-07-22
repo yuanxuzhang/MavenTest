@@ -18,7 +18,8 @@ public class AccountPersistServiceTest {
 	
 	@Before
 	public void prepare() throws AccountPersistException{
-		File persistDataFile = new File("\\target\\classes\\account-persist.xml");
+		//File persistDataFile = new File("\\target\\classes\\account-persist.xml");
+		File persistDataFile = new File("E:\\persist-data.xml");
 		if(persistDataFile.exists()){
 			persistDataFile.delete();
 		}

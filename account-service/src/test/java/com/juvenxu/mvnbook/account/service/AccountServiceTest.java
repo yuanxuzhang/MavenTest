@@ -78,7 +78,7 @@ public class AccountServiceTest {
   
         // 3a. Try login but not activated  
         try {  
-            accountService.login("xuj", "admin");  
+            accountService.login("xuj", "admin", captchaKey, captchaValue);  
             fail("Disabled account shouldn't be able to log in.");  
         } catch (AccountServiceException e) {  
         }  
@@ -88,11 +88,11 @@ public class AccountServiceTest {
         accountService.activate(activationCode);  
   
         // 5. Login with correct id and password  
-        accountService.login("xuj", "admin");  
+        accountService.login("xuj", "admin", captchaKey, captchaValue);  
   
         // 5a. Login with incorrect password  
         try {  
-            accountService.login("xuj", "admin1");  
+            accountService.login("xuj", "admin1", captchaKey, captchaValue);  
             fail("Password is incorrect, shouldn't be able to login.");  
         } catch (AccountServiceException e) {  
         }  

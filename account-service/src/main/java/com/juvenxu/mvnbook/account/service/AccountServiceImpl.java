@@ -60,6 +60,7 @@ public class AccountServiceImpl implements AccountService {
 	private Map<String, String> activationMap = new HashMap<String, String>();
 	public void signUp(SignUpRequest signUpRequest) throws AccountServiceException, AccountCaptchaException {
 		if(!signUpRequest.getPassword().equals(signUpRequest.getConfirmPassword())){
+		    // TODO 这里应该加上日志，而非直接面向前台的selvert
 			throw new AccountServiceException("2 password do not match.");
 		}
 		if(!accountCaptchaService.validateCaptcha(signUpRequest.getCaptchaKey(), signUpRequest.getCaptchaValue())){
@@ -89,6 +90,7 @@ public class AccountServiceImpl implements AccountService {
 	}
 
 	public void activate(String activationNumber) throws AccountServiceException {
+		// TODO 取出来不需要删除吗？
 		String acocuntId = activationMap.get(activationNumber);
 		if(acocuntId == null){
 			throw new AccountServiceException("Invalid account activation ID.");
@@ -103,7 +105,15 @@ public class AccountServiceImpl implements AccountService {
 		
 	}
 
-	public void login(String id, String password) throws AccountServiceException {
+	public void login(String id, String password, String captchaKey, String captchaValue) throws AccountServiceException {		
+		try {
+			if(!accountCaptchaService.validateCaptcha(captchaKey, captchaValue)){
+				throw new AccountServiceException("Incorrect Captcha.");
+			}
+		} catch (AccountCaptchaException e) {
+			// TODO 加上日志
+			e.printStackTrace();
+		}
 		try {
 			Account account = accountPersistService.readAccount(id);
 			if(account == null){

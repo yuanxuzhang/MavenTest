@@ -32,6 +32,35 @@ public class AccountEmailServiceImpl implements AccountEmailService{
 		}
 		
 	}
+	/*public void sendMail(String to, String subject, String htmlText){
+		try {  
+	        Properties props = new Properties();  
+	        props.put("username", );   
+	        props.put("password", "xxxxxx");   
+	        props.put("mail.transport.protocol", "smtp" );  
+	        props.put("mail.smtp.host", "smtp.163.com");  
+	        props.put("mail.smtp.port", "25" );  
+	
+	        Session mailSession = Session.getDefaultInstance(props);  
+	
+	        Message msg = new MimeMessage(mailSession);     
+	        msg.setFrom(new InternetAddress("13326349318@163.com"));  
+	        msg.addRecipients(Message.RecipientType.TO, InternetAddress.parse(to));   
+	        msg.setSubject(subject);   
+	        msg.setContent(htmlText,"text/html;charset=UTF-8");
+	
+	        msg.saveChanges();  
+	
+	        Transport transport = mailSession.getTransport("smtp");  
+	        transport.connect(props.getProperty("mail.smtp.host"), props  
+	                .getProperty("username"), props.getProperty("password"));   
+	        transport.sendMessage(msg, msg.getAllRecipients());  
+	        transport.close();     
+	    } catch (Exception e) {  
+	        e.printStackTrace();  
+	        System.out.println(e);  
+	    }   
+	}   */
 
 	public String getSystemEmail() {
 		return systemEmail;

@@ -16,7 +16,7 @@ import com.google.code.kaptcha.impl.DefaultKaptcha;
 import com.google.code.kaptcha.util.Config;
 
 public class AccountCaptchaServiceImpl implements AccountCaptchaService, InitializingBean {
-//com.juvenxu.mvnbook.account.captcha.AccountCaptchaServiceImpl
+    //com.juvenxu.mvnbook.account.captcha.AccountCaptchaServiceImpl
 	private DefaultKaptcha producer;
 	
 	private Map<String, String> captchaMap = new HashMap<String, String>();

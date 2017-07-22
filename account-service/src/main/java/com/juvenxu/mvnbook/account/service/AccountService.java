@@ -12,6 +12,6 @@ public interface AccountService {
 	
 	void activate(String activationNumber) throws AccountServiceException;
 	
-	void login(String id, String password) throws AccountServiceException;
+	void login(String id, String password, String captchaKey, String captchaValue) throws AccountServiceException;
 	
 }
