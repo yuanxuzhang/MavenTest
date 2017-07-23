@@ -22,12 +22,15 @@
 	<dependencies>
 		<!-- <dependency> <groupId>com.google.code.kaptcha</groupId> <artifactId>kaptcha</artifactId> 
 			<version>${kaptcha.version}</version> </dependency> -->
+		<!-- <dependency> <groupId>com.google.code</groupId> <artifactId>kaptcha</artifactId> 
+			<version>2.3.2</version> <classifier>jdk1.8</classifier> </dependency> -->
+		<!-- https://mvnrepository.com/artifact/com.github.penggle/kaptcha -->
 		<dependency>
-			<groupId>com.google.code</groupId>
+			<groupId>com.github.penggle</groupId>
 			<artifactId>kaptcha</artifactId>
 			<version>2.3.2</version>
-			<!-- <classifier>jdk1.8</classifier> -->
 		</dependency>
+
 		<!--<dependency> <groupId>com.octo.captcha</groupId> <artifactId>jcaptcha-all</artifactId> 
 			<version>1.0-RC6</version> </dependency> -->
 		<dependency>
@@ -44,7 +47,7 @@
 		</dependency>
 		<dependency>
 			<groupId>log4j</groupId>
-    		<artifactId>log4j</artifactId>
+			<artifactId>log4j</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>junit</groupId>
