@@ -13,6 +13,7 @@
 	<properties>
 		<!-- <springframework.version>2.5.6</springframework.version> -->
 		<springframework.version>3.2.17.RELEASE</springframework.version>
+		<apacheLog4j.version>1.2.17</apacheLog4j.version>
 		<junit.version>4.7</junit.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
@@ -44,6 +45,11 @@
 				<groupId>org.springframework</groupId>
 				<artifactId>spring-web</artifactId>
 				<version>${springframework.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>log4j</groupId>
+    			<artifactId>log4j</artifactId>
+				<version>${apacheLog4j.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>junit</groupId>

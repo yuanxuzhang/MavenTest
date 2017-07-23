@@ -10,12 +10,16 @@ import java.util.Properties;
 
 import javax.imageio.ImageIO;
 
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.InitializingBean;
 
 import com.google.code.kaptcha.impl.DefaultKaptcha;
 import com.google.code.kaptcha.util.Config;
 
 public class AccountCaptchaServiceImpl implements AccountCaptchaService, InitializingBean {
+	
+	private static final Logger log = Logger.getLogger(AccountCaptchaServiceImpl.class);
+	
     //com.juvenxu.mvnbook.account.captcha.AccountCaptchaServiceImpl
 	private DefaultKaptcha producer;
 	
@@ -30,6 +34,8 @@ public class AccountCaptchaServiceImpl implements AccountCaptchaService, Initial
 	}
 	
 	public String generateCaptchaKey() throws AccountCaptchaException {
+		log.info("generateCaptchaKey() 执行");
+		log.error("generateCaptchaKey() 执行");
 		String key = RandomGenerator.getRandomString();
 		String value = getCaptchaText();
 		captchaMap.put(key, value);
@@ -71,7 +77,7 @@ public class AccountCaptchaServiceImpl implements AccountCaptchaService, Initial
 	public boolean validateCaptcha(String captchaKey, String captchaValue) throws AccountCaptchaException {
 		String text = captchaMap.get(captchaKey);
 		if(text == null){
-			//TODO
+			log.info("text 内容为空!");
 			throw new AccountCaptchaException();
 		}
 		
