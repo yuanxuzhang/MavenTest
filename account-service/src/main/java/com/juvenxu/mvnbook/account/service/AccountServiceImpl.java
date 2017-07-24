@@ -3,8 +3,11 @@ package com.juvenxu.mvnbook.account.service;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.apache.log4j.Logger;
+
 import com.juvenxu.mvnbook.account.captcha.AccountCaptchaException;
 import com.juvenxu.mvnbook.account.captcha.AccountCaptchaService;
+import com.juvenxu.mvnbook.account.captcha.AccountCaptchaServiceImpl;
 import com.juvenxu.mvnbook.account.captcha.RandomGenerator;
 import com.juvenxu.mvnbook.account.email.AccountEmailService;
 import com.juvenxu.mvnbook.account.persist.Account;
@@ -12,6 +15,8 @@ import com.juvenxu.mvnbook.account.persist.AccountPersistException;
 import com.juvenxu.mvnbook.account.persist.AccountPersistService;
 
 public class AccountServiceImpl implements AccountService {
+	
+	private static final Logger log = Logger.getLogger(AccountServiceImpl.class);
 	
 	private AccountPersistService accountPersistService;
 	private AccountEmailService accountEmailService;
@@ -105,7 +110,10 @@ public class AccountServiceImpl implements AccountService {
 		
 	}
 
-	public void login(String id, String password, String captchaKey, String captchaValue) throws AccountServiceException {		
+	public void login(String id, String password, String captchaKey, String captchaValue) throws AccountServiceException {	
+		
+		log.error("执行");
+		
 		try {
 			if(!accountCaptchaService.validateCaptcha(captchaKey, captchaValue)){
 				throw new AccountServiceException("Incorrect Captcha.");

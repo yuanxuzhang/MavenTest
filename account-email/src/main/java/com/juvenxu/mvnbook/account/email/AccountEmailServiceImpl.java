@@ -3,16 +3,23 @@ package com.juvenxu.mvnbook.account.email;
 import javax.mail.MessagingException;
 import javax.mail.internet.MimeMessage;
 
+import org.apache.log4j.Logger;
 import org.springframework.mail.MailException;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
 
 public class AccountEmailServiceImpl implements AccountEmailService{
+	
+	private static final Logger log = Logger.getLogger(AccountEmailServiceImpl.class);
+	
 	private JavaMailSender javaMailSender;
 	
 	private String systemEmail;
 	
 	public void sendMail(String to, String subject, String htmlText){
+		
+		log.error("sendMail");
+		
 		MimeMessage msg = javaMailSender.createMimeMessage();
 		MimeMessageHelper msgHelper = new MimeMessageHelper(msg);
 		
