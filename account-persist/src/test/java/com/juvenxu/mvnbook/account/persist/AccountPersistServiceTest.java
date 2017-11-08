@@ -13,6 +13,10 @@ import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import com.juvenxu.mvnbook.account.persist.Account;
+import com.juvenxu.mvnbook.account.persist.AccountPersistException;
+import com.juvenxu.mvnbook.account.persist.AccountPersistService;
+
 public class AccountPersistServiceTest {
 	private AccountPersistService service;
 	
